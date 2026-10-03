@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <AssemblyName>Summs</AssemblyName>
+    <RootNamespace>Summs</RootNamespace>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <ApplicationIcon>Summs.ico</ApplicationIcon>
+    <Configurations>Debug;Release;Practice</Configurations>
+  </PropertyGroup>
+
+  <!-- Practice Tool build: fixed enemy lineup and shortened cooldowns (see PracticeData.cs). -->
+  <PropertyGroup Condition="'$(Configuration)' == 'Practice'">
+    <DefineConstants>$(DefineConstants);PRACTICE</DefineConstants>
+    <Optimize>true</Optimize>
+    <AssemblyName>SummsPractica</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- Same icon for the tray (the exe's own icon is only 32x32 via ExtractAssociatedIcon). -->
+    <EmbeddedResource Include="Summs.ico" LogicalName="Summs.Summs.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.SignalR.Client" Version="8.0.31" />
+  </ItemGroup>
+
+</Project>
