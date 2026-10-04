@@ -21,7 +21,7 @@ sealed record JoinResult(List<SyncItem> Items, double? ClearStamp);
 /// </summary>
 sealed class SyncClient : IDisposable
 {
-    public const string DefaultServer = "https://summs-production.up.railway.app";
+    public const string DefaultServer = "https://summs-server-production.up.railway.app";
     public const string TimerPrefix = "timer/";
     const int RetryMs = 5000;
 
